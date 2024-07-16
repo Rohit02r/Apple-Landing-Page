@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Apple(IN)</title>
+    <link rel="icon" type="image/x-icon" href="./apple icon.png">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #34b1eb, #9b59b6, #e91e63, #f39c12, #f1c40f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #04adfc, #e91e63 75%);
+        }
+        .col {
+            height: auto;
+            background-color: rgb(5, 5, 5);
+        }
+        .card {
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card img {
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+        }
+        .gra {
+            color: rgb(104, 91, 91);
+        }
+        .he {
+            height: 400px;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-down {
+  animation: fadeInDown 1s ease-out forwards;
+}
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        .delay-1 {
+            animation-delay: 1.5s;
+        }
+        .delay-2 {
+            animation-delay: 10s;
+        }
+        .delay-3 {
+            animation-delay: 13s;
+        }
+        header a {
+            transition: font-weight 0.2s ease;
+        }
+        header a:hover {
+            font-weight: 500 !important; 
+        }
+        .gray-line {
+            border: none; 
+            height: 1px; 
+            background-color: gray; 
+            margin: 20px 10px; 
+        }
+        .footer {
+            text-align: center; 
+            padding: 20px; 
+            background-color: black; 
+            color: gray;
+        }
+        
+
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky-header">
+        <header class="sticky top-0 bg-white shadow-md">
+            <nav class="w-full py-4 px-6 sm:px-8 bg-white">
+                <div class="flex justify-between items-center">
+                    <a href="#"><img class="rounded-full h-6 w-5" src="./Apple_logo_black.svg.png" alt="Apple Logo"></a>
+                    <div class="sm:hidden">
+                        <button id="menu-button" class="text-black focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="hidden sm:flex space-x-9 justify-between items-center">
+                        <li><a class="font-light hover:font-medium text-sm" href="#">Store</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">Mac</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">iPad</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">iPhone</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">AirPods</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">iWatch</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">AppleTV</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">Services</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">About</a></li>
+                        <li><a class="font-light hover:font-medium text-sm" href="#">Contact</a></li>
+                        <li><img class="h-4 w-4 ml-4" src="./free-search-icon-2907-thumb.png" alt="Search Icon"></li>
+                        <li><img class="h-4 w-4 ml-4" src="./shopping-bag.svg" alt="Shopping Bag Icon"></li>
+                    </ul>
+                </div>
+                <ul id="mobile-menu" class="sm:hidden hidden flex-col space-y-4 mt-4">
+                    <li><a class="font-light hover:font-medium text-sm" href="#">Store</a></li>
+                    <li><a class="font-light hover:font-medium text-sm" href="#">Mac</a></li>
+                    <li><a class="font-light hover:font-medium text-sm" href="#">iPhone</a></li>
+                    <li><a class="font-light hover:font-medium text-sm" href="#">About</a></li>
+                    <li><a class="font-light hover:font-medium text-sm" href="#">Contact</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+        
+        <script>
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+        
+    </header>
+
+    <div>
+        <div>
+            <h1 class="text-center p-10"><span class="text-4xl font-bold gradient-text fade-in-down ">Apple Intelligence</span></h1>
+            <h2 class="text-center text-2xl font-normal text-gray-950 pb-8 fade-in-down">AI for the rest of us.</h2>
+            <img src="./hero__cc2hijh14hea_large.jpg" alt="">
+        </div>
+
+        <div>
+            <div class="w-full max-w-7xl p-4">
+                <div class="grid sm:grid-cols-2 grid-cols-1  gap-8">
+                    <div class="text-center p-4">
+                        <h1 class="text-5xl font-bold">The Start of a New Era for <span class="text-6xl font-bold gradient-text fade-in-down delay-1">Siri.</span></h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <p class="text-lg text-left items-start">Siri draws on Apple Intelligence for all-new superpowers. With an all-new design, richer language understanding, and the ability to type to Siri whenever it’s convenient for you, communicating with Siri is more natural than ever. Equipped with awareness of your personal context, the ability to take action in and across apps, and product knowledge about your devices’ features and settings, Siri will be able to assist you like never before.</p>
+                    </div>
+                </div>
+                <div><img class="mx-auto  rounded-xl shadow-md" src="./on_screen_awareness__0rgsyx0t8zm2_large.jpg" alt=""></div>
+            </div>
+
+            <div class="bg-black">
+                <h1 class="text-center text-4xl sm:text-5xl font-medium p-6 sm:p-10 text-white fade-in-down">ChatGPT, seamlessly integrated.</h1>
+                <p class="text-left px-4 sm:px-10 py-6 sm:py-10 font-normal text-white">
+                    With ChatGPT from OpenAI integrated into Siri and Writing Tools, you get even more expertise when it might be helpful for you. No need to jump between tools. Siri can tap into ChatGPT for certain requests, including questions about photos or documents. And with Compose in Writing Tools, you can create and illustrate original content from scratch. You control when ChatGPT is used and will be asked before any of your information is shared. Anyone can access ChatGPT for free, without creating an account. ChatGPT subscribers can connect accounts to access paid features within these experiences.
+                </p>
+                <img class="mx-auto mt-6 sm:mt-10" src="./third_party_compatibility__i163lef5dl6q_large.jpg" alt="">
+            </div>
+            
+
+            <div class="p-10">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 gradient-bg rounded-xl">
+                    <div class="col-span-2 text-left p-4">
+                        <h1 class="text-left text-5xl font-medium px-20 pt-20 pb-8 text-white fade-in-down delay-2 ">Apple Intelligence is compatible with these devices.</h1>
+                        <p class="text-white text-lg px-20">Apple Intelligence is free to use and will initially be available in US English. Coming in beta later this year.*</p>
+                    </div>
+                    <div>
+                        <ul class="p-10">
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">iPhone 15 Pro Max</span><br>A17 Pro</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">iPhone 15 Pro</span><br>A17 Pro</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">iPad Pro</span><br>M1 and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">iPad Air</span><br>M1 and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">MacBook Air</span><br>M1 and later</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="p-10">
+                            <li class="text-white py-5"><span class="text-left text-2xl font-medium text-white">MacBook Pro</span><br>M1 and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">iMac</span><br>M1 and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">Mac mini</span><br>M1 and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">Mac Studio</span><br>M1 Max and later</li>
+                            <li class="text-white py-4"><span class="text-left text-2xl font-medium text-white">Mac Pro</span><br>M2 Ultra</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-xl col ">
+                <h1 class="text-center text-5xl font-medium py-6 text-white fade-in-down delay-2">iPhone 15 Pro</h1>
+                <h1 class="text-center text-5xl font-thin gra fade-in-down delay-2">Titanium</h1>
+                <div class="grid grid-cols-2  sm:grid-cols-4  gap-3 rounded-xl">
+                    <div class="p-10">
+                        <img class="card he fade-in delay-2" src="./black_titanium__e5htsz029002_large.jpg" alt="Image 1">
+                    </div>
+                    <div class="p-10">
+                        <img class="card he fade-in delay-2" src="./white_titanium__b3fwwp6zrrhy_large.jpg" alt="Image 2">
+                    </div>
+                    <div class="p-10">
+                        <img class="card he fade-in delay-2" src="./blue_titanium__wsqgpa9i1822_large.jpg" alt="Image 3">
+                    </div>
+                    <div class="p-10">
+                        <img class="card he fade-in delay-2" src="./natural_titanium__ccl12n7vwwxe_large.jpg" alt="Image 4">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="px-4 py-2 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-3xl"> Buy</button>
+                    <button class="px-8 py-2 border bg-blue-600 border-blue-500 text-white hover:bg-blue-500 hover:text-white rounded-3xl ml-6 mb-16">Learn more</button>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex items-center justify-center bg-black">
+            <div class="text-center mt-20">
+                <img src="./chip__fuct924q1s66_large.jpg" alt="A17 Pro Chip" class="mx-auto mb-6 fade-in delay-3">
+                <h1 class="text-7xl font-bold text-white fade-in-down delay-2">A17 Pro chip. A monster win for gaming.</h1>
+                <h2 class="gra text-2xl p-10 fade-in-down delay-2">It’s here. The biggest redesign in the history of Apple GPUs</h2>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-black py-12 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-6 grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-md font-bold  mb-4">Shop and Learn</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Store</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Mac</a></li>
+                        <li><a href="#" class="hover:underline text-sm">iPad</a></li>
+                        <li><a href="#" class="hover:underline text-sm">iPhone</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Watch</a></li>
+                        <li><a href="#" class="hover:underline text-sm">AirPods</a></li>
+                        <li><a href="#" class="hover:underline text-sm">TV & Home</a></li>
+                        <li><a href="#" class="hover:underline text-sm">AirTag</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Accessories</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Gift Cards</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Wallet</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Wallet</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-md font-bold mb-4">Account</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Manage Your Apple ID</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Store Account</a></li>
+                        <li><a href="#" class="hover:underline text-sm">iCloud.com</a></li>
+                        <li class="mt-6"><h3 class="text-xl font-bold mb-4">Entertainment</h3></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple One</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple TV+</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Music</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Arcade</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Podcasts</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Books</a></li>
+                        <li><a href="#" class="hover:underline text-sm">App Store</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-md font-bold mb-4">Apple Store</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Find a Store</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Genius Bar</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Today at Apple</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Group Reservations</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Camp</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Trade In</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Ways to Buy</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Recycling Programme</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Order Status</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Shopping Help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-md font-bold mb-4">For Business</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Apple and Business</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Shop for Business</a></li>
+                    </ul>
+                    <h3 class="text-md font-bold mt-6 mb-4">For Education</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Apple and Education</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Shop for Education</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Shop for University</a></li>
+                    </ul>
+                    <h3 class="text-md font-bold mt-6 mb-4">For Healthcare</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Apple in Healthcare</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Health on Apple Watch</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-md font-bold mb-4">Apple Values</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Accessibility</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Education</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Environment</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Privacy</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Supply Chain</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-md font-bold mb-4">About Apple</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline text-sm">Newsroom</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Apple Leadership</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Career Opportunities</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Investors</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Ethics & Compliance</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Events</a></li>
+                        <li><a href="#" class="hover:underline text-sm">Contact Apple</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    
+    <div class="footer mx-auto px-4 sm:px-6 lg:px-8">
+        <hr class="gray-line">
+        <p class="mx-auto text-center sm:text-left">
+            <span class="block sm:inline-block ml-10">Copyright © 2024 Apple Inc. All rights reserved.</span>
+            <a href="#" class="block sm:inline-block mt-2 sm:mt-0 sm:ml-4 hover:underline">Privacy Policy</a>
+            <span class="block sm:inline-block mx-2">|</span>
+            <a href="#" class="block sm:inline-block mt-2 sm:mt-0 sm:ml-4 hover:underline">Terms of Use</a>
+            <span class="block sm:inline-block mx-2">|</span>
+            <a href="#" class="block sm:inline-block mt-2 sm:mt-0 sm:ml-4 hover:underline">Sales Policy</a>
+            <span class="block sm:inline-block mx-2">|</span>
+            <a href="#" class="block sm:inline-block mt-2 sm:mt-0 sm:ml-4 hover:underline">Legal</a>
+            <span class="block sm:inline-block mx-2">|</span>
+            <a href="#" class="block sm:inline-block mt-2 sm:mt-0 sm:ml-4 hover:underline">Site Map</a>
+            <span class="block sm:inline-block ml-4 mt-2 sm:mt-0">India</span>
+        </p>
+    </div>
+    
+</body>
+</html>
